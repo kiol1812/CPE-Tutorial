@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>課程地圖</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; }
+        header { background: #333; color: #fff; padding: 1em; text-align: center; }
+        nav { background: #444; color: #fff; padding: 0.5em; text-align: center; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        main { max-width: 800px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; }
+        h2 { color: #333; }
+        footer { background: #333; color: #fff; text-align: center; padding: 1em; margin-top: 2em; }
+        .brick-wall {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 32px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .brick {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            flex: 1 1 300px;
+            min-width: 250px;
+            min-height: 120px;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CPE 技巧教學</h1>
+    </header>
+    <nav>
+        <a href="/index.html">教學地圖</a>
+        <!-- <a href="#">關於我</a>
+        <a href="#">聯絡</a> -->
+    </nav>
+    <main>
+        <p style="text-align: center;">這是 CPE 簡單題的課程地圖，<br/>點擊每個區塊以了解更多內容</p>
+        <div class="brick-wall">
+            <div class="brick">
+                <a href="./views/introduction.html"><h3>題目導讀</h3></a>
+                <p>CPE 解題技巧與題目導讀</p>
+            </div>
+            <div class="brick">
+                <a href="./views/IO.html"><h3>輸入與輸出</h3></a>
+                <p>CPE 簡單題都是考對輸入輸出的熟悉度</p>
+            </div>
+            <div class="brick">
+                <a href="./views/stl.html"><h3>STL 使用</h3></a>
+                <p>STL 是 C++ 的強大工具，<br/>熟悉它能讓你事半功倍</p>
+            </div>
+            <div class="brick">
+                <a href="./views/stl.html"><h3>練習</h3></a>
+                <p>練習題目以熟悉課程內容</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; CPE 技巧教學 2025
+    </footer>
+</body>
+</html>
