@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>輸入與輸出</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; }
+        header { background: #333; color: #fff; padding: 1em; text-align: center; }
+        nav { background: #444; color: #fff; padding: 0.5em; text-align: center; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        main { max-width: 800px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; }
+        h2 { color: #333; }
+        footer { background: #333; color: #fff; text-align: center; padding: 1em; margin-top: 2em; }
+        .card-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 32px;
+            padding: 32px 0;
+            max-width: 100vw;
+            margin: auto;
+            scrollbar-width: none;
+        }
+        .card-container::before,
+        .card-container::after {
+            content: "";
+            flex: 0 0 10vw;
+            max-width: calc((100vw - 80vw) / 2);
+        }
+        .card-container::-webkit-scrollbar {
+            display: none;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            flex: 0 0 80vw;
+            min-width: 300px;
+            max-width: 600px;
+            min-height: 200px;
+            padding: 24px;
+            box-sizing: border-box;
+            scroll-snap-align: center;
+            margin: 0 16px;
+            transition: box-shadow 0.3s;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CPE 技巧教學</h1>
+    </header>
+    <nav>
+        <a href="/index.html">教學地圖</a>
+        <!-- <a href="#">關於我</a>
+        <a href="#">聯絡</a> -->
+    </nav>
+    <main>
+        <p style="text-align: center;">熟悉輸入與輸出是解簡單題目的關鍵</p>
+        <div class="card-container">
+            <div class="card" id="card1">
+                <h3>給定輸入行數</h3>
+                <p>在 CPE 簡單題中，通常會給定輸入的行數，讓你知道需要讀取多少行資料。</p>
+                <h4>參考輸入</h4>
+                <pre> <!-- pre 這個區塊不是跑版，請不要使用 formatter !!! -->
+    3
+    1 2 3
+    4 5 6
+    7 8 9
+                </pre>
+                <h4>參考讀取方法</h4>
+                <label for="lang-select">選擇語言：</label>
+                <select class="lang-select">
+                    <option value="cpp" selected>C++</option>
+                    <option value="c">C</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                </select>
+                <br>
+                <pre class="code-block" style="background:#f4f4f4; padding:1em; border-radius:6px; overflow-x:auto;"><code class="language-cpp"></code></pre>
+            </div>
+            <div class="card" id="card2">
+                <h3>輸入直到 EOF 或某個值</h3>
+                <p>有些題目會要求輸入直到 EOF，表示需要讀取資料直到所有輸出結束(End of File)</p>
+                <h4>參考輸入</h4>
+                <pre> <!-- pre 這個區塊不是跑版，請不要使用 formatter !!! -->
+    3
+    2
+    5
+    ...
+    0
+                </pre>
+                <h4>參考讀取方法</h4>
+                <label for="lang-select">選擇語言：</label>
+                <select class="lang-select">
+                    <option value="cpp" selected>C++</option>
+                    <option value="c">C</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                </select>
+                <br>
+                <pre class="code-block" style="background:#f4f4f4; padding:1em; border-radius:6px; overflow-x:auto;"><code class="language-cpp"></code></pre>
+            </div>
+            <div class="card" id="card3">
+                <h3>讀取整行</h3>
+                <p>有些題目會需要讀取單行未定格式的輸入。</p>
+                <h4>參考輸入</h4>
+                <pre> <!-- pre 這個區塊不是跑版，請不要使用 formatter !!! -->
+    3 5 2 7 1
+    9 0
+    4 6 8
+                </pre>
+                <h4>參考讀取方法</h4>
+                <label for="lang-select">選擇語言：</label>
+                <select class="lang-select">
+                    <option value="cpp" selected>C++</option>
+                    <option value="c">C</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                </select>
+                <br>
+                <pre class="code-block" style="background:#f4f4f4; padding:1em; border-radius:6px; overflow-x:auto;"><code class="language-cpp"></code></pre>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; CPE 技巧教學 2025
+    </footer>
+</body>
+<script>
+    let scrollTimeout = null;
+    let gistRawUrls = {};
+
+    async function loadGistCode(lang, cardElem) {
+        const cardId = cardElem.id;
+        const url = gistRawUrls[cardId][lang];
+        // console.log(`載入 ${cardId} 的 ${lang} 程式碼：${url}`);
+        const codeBlock = cardElem.querySelector('.code-block code');
+        cardElem.querySelector('.code-block').scrollLeft = 0;
+        codeBlock.textContent = '載入中...';
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('載入失敗');
+            const code = await res.text();
+            codeBlock.textContent = code;
+            codeBlock.className = 'language-' + lang;
+            delete codeBlock.dataset.highlighted;
+            hljs.highlightElement(codeBlock);
+        } catch (e) {
+            codeBlock.textContent = '無法載入程式碼，請稍後再試。';
+        }
+    }
+    async function loadGistUrls() {
+        const res = await fetch('gistRawUrls.json');
+        gistRawUrls = await res.json();
+    }
+
+    function getCenteredCard() {
+        const container = document.querySelector('.card-container');
+        const cards = Array.from(container.querySelectorAll('.card'));
+        const containerRect = container.getBoundingClientRect();
+        const containerCenter = containerRect.left + containerRect.width / 2;
+        let minDiff = Infinity;
+        let centeredCard = null;
+        cards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.left + cardRect.width / 2;
+            const diff = Math.abs(containerCenter - cardCenter);
+            if (diff < minDiff) {
+                minDiff = diff;
+                centeredCard = card;
+            }
+        });
+
+        return centeredCard;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        loadGistUrls()
+        .then(() => {
+            document.querySelectorAll('.card').forEach(card => {
+                const langSelect = card.querySelector('.lang-select');
+                const lang = langSelect.value;
+                loadGistCode(lang, card);
+            });
+            document.querySelector('.card-container').addEventListener('scroll', () => {
+                if (scrollTimeout) clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    const card = getCenteredCard();
+                    if (card) {
+                        const lang = card.querySelector('.lang-select').value;
+                        loadGistCode(lang, card);
+                    }
+                }, 150);
+            });
+            document.querySelectorAll('.lang-select').forEach(select => {
+                select.addEventListener('change', (e) => {
+                    const card = e.target.closest('.card');
+                    if (card) {
+                        const lang = e.target.value;
+                        loadGistCode(lang, card);
+                    }
+                });
+            });
+            const card = getCenteredCard();
+            if (card) {
+                const lang = card.querySelector('.lang-select').value;
+                loadGistCode(lang, card);
+            }
+        });
+    });
+</script>
+</html>

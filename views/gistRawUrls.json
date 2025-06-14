@@ -1,0 +1,20 @@
+{
+    "card1": {
+        "cpp": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in1.cpp",
+        "c": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in1.c",
+        "python": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in1.py",
+        "java": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in1.java"
+    },
+    "card2": {
+        "cpp": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in2.cpp",
+        "c": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in2.c",
+        "python": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in2.py",
+        "java": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in2.java"
+    },
+    "card3": {
+        "cpp": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in3.cpp",
+        "c": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in3.c",
+        "python": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in3.py",
+        "java": "https://gist.githubusercontent.com/kiol1812/ae0e6a80ff593be9b8384a30bbec48e9/raw/in3.java"
+    }
+}
