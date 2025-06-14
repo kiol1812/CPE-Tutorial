@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>輸入與輸出</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; }
+        header { background: #333; color: #fff; padding: 1em; text-align: center; }
+        nav { background: #444; color: #fff; padding: 0.5em; text-align: center; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        main { max-width: 800px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; }
+        h2 { color: #333; }
+        footer { background: #333; color: #fff; text-align: center; padding: 1em; margin-top: 2em; }
+        .card-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 32px;
+            padding: 32px 0;
+            max-width: 100vw;
+            margin: auto;
+            scrollbar-width: none;
+        }
+        .card-container::before,
+        .card-container::after {
+            content: "";
+            flex: 0 0 10vw;
+            max-width: calc((100vw - 80vw) / 2);
+        }
+        .card-container::-webkit-scrollbar {
+            display: none;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            flex: 0 0 80vw;
+            min-width: 300px;
+            max-width: 600px;
+            min-height: 200px;
+            padding: 24px;
+            box-sizing: border-box;
+            scroll-snap-align: center;
+            margin: 0 16px;
+            transition: box-shadow 0.3s;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/java.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CPE 技巧教學</h1>
+    </header>
+    <nav>
+        <a href="/index.html">教學地圖</a>
+        <!-- <a href="#">關於我</a>
+        <a href="#">聯絡</a> -->
+    </nav>
+    <main>
+        <p style="text-align: center;">STL（Standard Template Library）是 C++ 的一個強大工具，提供了許多常用的資料結構和演算法。熟悉 STL 可以大幅提高程式設計效率。</p>
+        <div class="card-container">
+            <div class="card" id="card0a">
+                <h3>Input/Output</h3>
+                <p>STL 提供了簡單的輸入輸出方式，以下列舉一些常見的輸入輸出方式</p>
+                <ul>
+                    <li><strong>cin</strong>：標準輸入流，用於讀取鍵盤輸入。</li>
+                    <li><strong>cout</strong>：標準輸出流，用於輸出到螢幕。</li>
+                    <!-- <li><strong>cerr</strong>：標準錯誤流，用於輸出錯誤訊息。</li> -->
+                    <li><strong>getline</strong>：讀取整行輸入，包括空格。</li>
+                    <li><strong>printf</strong> 和 <strong>scanf</strong>：C 語言風格的格式化輸入輸出。</li>
+                </ul>
+            </div>
+            <div class="card" id="card0b">
+                <h3>Input/Output with Formatting</h3>
+                <p>STL 提供了格式化輸入輸出的功能，以下列舉一些常見的格式化操作</p>
+                <ul>
+                    <li><strong>setw()</strong>：設定輸出欄位寬度。</li>
+                    <li><strong>setfill()</strong>：設定填充字符。</li>
+                    <li><strong>setprecision()</strong>：設定浮點數的精度。</li>
+                    <li><strong>fixed</strong> 和 <strong>scientific</strong>：設定浮點數的表示方式。</li>
+                    <li><strong>left</strong>、<strong>right</strong> 和 <strong>internal</strong>：設定對齊方式。</li>
+                </ul>
+                <h4>建議</h4>
+                <p>雖然 STL 有提供上述的語法對輸出做格式化操作，但競賽時推薦使用 <strong>printf()</strong>，比較好記，對 printf() 的應用請參考 <a href="./IO.html">輸入與輸出</a></p>
+            </div>
+            <div class="card" id="card0c">
+                <h3>Input/Output with Streams</h3>
+                <p>STL 提供了流操作，可以用來處理輸入輸出，以下列舉一些常見的流操作</p>
+                <ul>
+                    <li><strong>stringstream</strong>：用於字串流操作，可以將字串當作輸入輸出流。</li>
+                    <li><strong>istringstream</strong>：用於從字串中讀取資料。</li>
+                    <li><strong>ostringstream</strong>：用於將資料寫入字串。</li>
+                    <li><strong>flush()</strong>：強制刷新輸出流。</li>
+                    <li><strong>setprecision()</strong>：設定浮點數的精度。</li>
+                </ul>
+            </div>
+            <div class="card" id="card0d">
+                <h3>Math</h3>
+                <p>STL 提供了數學相關的函式，以下列舉一些常見的數學函式</p>
+                <ul>
+                    <li><strong>abs()</strong>：返回絕對值。</li>
+                    <li><strong>pow()</strong>：計算次方。</li>
+                    <li><strong>sqrt()</strong>：計算平方根。</li>
+                    <li><strong>min()</strong> 和 <strong>max()</strong>：返回兩個數中的最小值或最大值。</li>
+                    <li><strong>gcd()</strong>：計算最大公因數。</li>
+                    <li><strong>lcm()</strong>：計算最小公倍數。</li>
+                    <li><strong>round()</strong>：四捨五入到最接近的整數。</li>
+                </ul>
+            </div>
+            <div class="card" id="card1a">
+                <h3>Containers</h3>
+                <p>STL 提供多種容器，在撰寫題目時可以到參考資料處查看，以下列舉一些常見的容器</p>
+                <ul>
+                    <li><strong>string</strong>：字串容器，支援動態大小與多種操作。</li>
+                    <li><strong>vector</strong>：動態陣列，支援快速隨機存取。</li>
+                    <li><strong>stack</strong>：堆疊，後進先出（LIFO）結構。</li>
+                    <li><strong>queue</strong>：佇列，先進先出（FIFO）結構。</li>
+                    <li><strong>set</strong>：集合，支援自動排序和唯一性。</li>
+                    <li><strong>unordered_set</strong>：無序集合，支援快速查找。</li>
+                    <li><strong>map</strong>：映射，支援鍵值對存儲，自動排序。</li>
+                    <li><strong>unordered_map</strong>：無序映射，支援快速查找。</li>
+                    <li><strong>array</strong>：靜態陣列，大小固定。</li>
+                    <li><strong>deque</strong>：雙向佇列，支援在兩端快速新增和刪除。</li>
+                    <li><strong>priority_queue</strong>：優先佇列，支援快速取出最大或最小元素。</li>
+                    <li><strong>list</strong>：雙向鏈結串列，適合頻繁新增和刪除操作。</li>
+                </ul>
+            </div>
+            <div class="card" id="card1b">
+                <h3>Input/Output with Containers</h3>
+                <p>STL 提供了容器的輸入輸出功能，以下列舉一些常見的容器操作</p>
+                <ul>
+                    <li><strong>push_back()</strong>：在 vector 或 deque 的末尾添加元素。</li>
+                    <li><strong>pop_back()</strong>：從 vector 或 deque 的末尾刪除元素。</li>
+                    <li><strong>push_front()</strong>：在 deque 的前端添加元素。</li>
+                    <li><strong>pop_front()</strong>：從 deque 的前端刪除元素。</li>
+                    <li><strong>insert()</strong>：在指定位置插入元素。</li>
+                    <li><strong>erase()</strong>：刪除指定位置的元素。</li>
+                    <li><strong>clear()</strong>：清空容器中的所有元素。</li>
+                </ul>
+            </div>
+            <div class="card" id="card1c">
+                <h3>String</h3>
+                <p>STL 提供了字串處理的功能，以下列舉一些常見的字串操作</p>
+                <ul>
+                    <li><strong>length()</strong>：返回字串長度。</li>
+                    <li><strong>substr()</strong>：提取子字串。</li>
+                    <li><strong>find()</strong>：查找子字串的位置。</li>
+                    <li><strong>replace()</strong>：替換字串中的部分內容。</li>
+                    <li><strong>append()</strong>：在字串末尾添加內容。</li>
+                    <li><strong>insert()</strong>：在指定位置插入內容。</li>
+                    <li><strong>erase()</strong>：刪除指定位置的內容。</li>
+                </ul>
+            </div>
+            <div class="card" id="card1d">
+                <h3>String with Formatting</h3>
+                <p>STL 提供了字串格式化的功能，以下列舉一些常見的字串格式化操作</p>
+                <ul>
+                    <li><strong>to_string()</strong>：將數值型別轉換為字串。</li>
+                    <li><strong>stoi()</strong>：將字串轉換為整數。</li>
+                    <li><strong>stod()</strong>：將字串轉換為浮點數。</li>
+                    <li><strong>setfill()</strong>：設定填充字符。</li>
+                    <li><strong>setw()</strong>：設定輸出欄位寬度。</li>
+                    <li><strong>setprecision()</strong>：設定浮點數的精度。</li>
+                </ul>
+            </div>
+            <div class="card" id="card2a">
+                <h3>Algorithms</h3>
+                <p>STL 提供了許多常用的演算法，可以直接使用，以下列舉一些常見的演算法</p>
+                <ul>
+                    <li><strong>sort</strong>：排序容器中的元素。</li>
+                    <li><strong>lower_bound</strong>：找出以排序容器中<u>大於或等於</u>給定值的數值</li>
+                    <li><strong>upper_bound</strong>：找出以排序容器中<u>大於</u>給定值的數值</li>
+                    <li><strong>find</strong>：查找容器中的元素。</li>
+                    <li><strong>reverse</strong>：反轉容器中的元素順序。</li>
+                    <li><strong>count</strong>：計算容器中某個元素的出現次數。</li>
+                    <li><strong>accumulate</strong>：計算容器中元素的總和。</li>
+                    <li><strong>min_element</strong> 和 <strong>max_element</strong>：查找最小或最大元素。</li>
+                    <!-- <li><strong>shuffle</strong>：隨機打亂容器中的元素順序。</li> -->
+                </ul>
+            </div>
+            <div class="card" id="card3a">
+                <h3>Iterators</h3>
+                <p>STL 提供了迭代器，可以用來遍歷容器中的元素，以下列舉一些常見的迭代器</p>
+                <ul>
+                    <li><strong>begin()</strong>：返回容器的起始迭代器。</li>
+                    <li><strong>end()</strong>：返回容器的結束迭代器。</li>
+                    <li><strong>rbegin()</strong>：返回容器的反向起始迭代器。</li>
+                    <li><strong>rend()</strong>：返回容器的反向結束迭代器。</li>
+                    <li><strong>cbegin()</strong> 和 <strong>cend()</strong>：返回常量迭代器，用於只讀操作。</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; CPE 技巧教學 2025
+    </footer>
+</body>
+</html>
