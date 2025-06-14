@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>題目導讀</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; }
+        header { background: #333; color: #fff; padding: 1em; text-align: center; }
+        nav { background: #444; color: #fff; padding: 0.5em; text-align: center; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        main { max-width: 800px; margin: 2em auto; background: #fff; padding: 2em; border-radius: 8px; }
+        h2 { color: #333; }
+        footer { background: #333; color: #fff; text-align: center; padding: 1em; margin-top: 2em; }
+        .card-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 32px;
+            padding: 32px 0;
+            max-width: 100vw;
+            margin: auto;
+            scrollbar-width: none;
+        }
+        .card-container::before,
+        .card-container::after {
+            content: "";
+            flex: 0 0 10vw;
+            max-width: calc((100vw - 80vw) / 2);
+        }
+        .card-container::-webkit-scrollbar {
+            display: none;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            flex: 0 0 80vw;
+            min-width: 300px;
+            max-width: 600px;
+            min-height: 200px;
+            padding: 24px;
+            box-sizing: border-box;
+            scroll-snap-align: center;
+            margin: 0 16px;
+            transition: box-shadow 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CPE 技巧教學</h1>
+    </header>
+    <nav>
+        <a href="/index.html">教學地圖</a>
+        <!-- <a href="#">關於我</a>
+        <a href="#">聯絡</a> -->
+    </nav>
+    <main>
+        <p style="text-align: center;">讀題技巧與解題建議說明，面對題目時有系統地處理</p>
+        <div class="card-container">
+            <div class="card" id="card1">
+                <h3>題目閱讀順序</h3>
+                <p>在七題 CPE 題目中，基本題通常會是前面一至三題。這些題目主要考對輸入與輸出的熟悉度，以及基本的程式設計能力。</p>
+                <p>在閱讀題目時，先看輸入與輸出格式，再看題目描述。這樣可以更快理解題目的要求。建議可以先將輸入讀取的架構先寫好，再詳細閱讀題目要求。</p>
+                <p>基本題通常不會用到資料結構或演算法，而是資料處理或 Greedy ，所以重點在輸入與輸出的處理，以下標註基本題的解題重點：</p>
+                <ul>
+                    <li>輸入格式：確認輸入格式，構想要以什麼樣的讀取架構處理</li>
+                    <li>輸入與輸出的範圍：確認輸入與輸出的範圍，選擇變數要使用什麼型態</li>
+                    <li>輸出格式：確認輸出格式，確保輸出的格式符合題目要求</li>
+                    <li>邏輯處理：根據題目要求來處理輸入資料</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; CPE 技巧教學 2025
+    </footer>
+</body>
+</html>
